@@ -37,7 +37,7 @@ fn main() {
 
 ## Roadmap
 - [x] basic tts api
-- [ ] control output stream with `play`
+- [x] control output stream with `play`
 - [ ] customize voice
 - [ ] linux support (rpi) (mess with build script)
 
