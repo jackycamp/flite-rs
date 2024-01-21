@@ -12,7 +12,7 @@ fn main() {
   fliters::tts("hello, world!").play_without_control();
 }
 ```
->>> Only macos is supported at this time xD
+> Only macos is supported at this time xD
 
 ## Roadmap
 - [x] basic tts api
@@ -27,3 +27,4 @@ todo
 
 ## Building
 
+todo
