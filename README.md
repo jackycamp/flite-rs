@@ -16,9 +16,9 @@ fn main() {
 
 ## Roadmap
 - [x] basic tts api
-- [] control output stream with `play`
-- [] customize voice
-- [] linux support (rpi) (mess with build script)
+- [ ] control output stream with `play`
+- [ ] customize voice
+- [ ] linux support (rpi) (mess with build script)
 
 ## Installation
 
