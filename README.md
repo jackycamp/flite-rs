@@ -4,7 +4,7 @@
 </div>
 
 ## Usage
-
+Check out `/examples` directory for more examples.
 ```rust
 // standard example
 use fliters;
