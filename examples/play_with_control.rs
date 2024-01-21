@@ -7,5 +7,10 @@ fn main() {
     let fwav = fliters::tts("play this audio with some stream controls");
     let decoder = fwav.get_decoder();
     sink.append(decoder);
+    sink.play();
+    std::thread::sleep(std::time::Duration::from_secs(1));
+    sink.pause();
+    std::thread::sleep(std::time::Duration::from_secs(3));
+    sink.play();
     sink.sleep_until_end();
 }
