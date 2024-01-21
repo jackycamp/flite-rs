@@ -26,6 +26,7 @@ impl FliteWav {
             num_channels: (*raw_wav).num_channels
         } 
     }
+
     pub fn spec(&self) -> WavSpec {
         WavSpec {
             channels: self.num_channels as u16,
@@ -34,12 +35,17 @@ impl FliteWav {
             sample_format: SampleFormat::Int
         }
     }
-    pub fn play(&self) -> Sink {
-        // TODO: play returns a sink, so that user could
-        // pause/play/stop audio output stream.
-        todo!()
+
+    pub fn get_decoder(&self) -> Decoder<Cursor<Vec<u8>>> {
+        let mut wav_data: Vec<u8> = Vec::new();
+        let mut wav_writer = WavWriter::new(BufWriter::new(Cursor::new(&mut wav_data)), self.spec()).expect("failed to create wav writer");
+        self.samples.iter().copied().for_each(|sample| wav_writer.write_sample(sample).expect("failed to write sample"));
+        wav_writer.finalize().expect("Failed to finalized wav");
+        let decoder = Decoder::new(Cursor::new(wav_data)).expect("failed to create decoder");
+        decoder
     }
-    pub fn play_without_control(&self) {
+
+    pub fn play(&self) {
         let (_stream, stream_handle) = OutputStream::try_default().unwrap();
         let mut wav_data: Vec<u8> = Vec::new();
         let mut wav_writer = WavWriter::new(BufWriter::new(Cursor::new(&mut wav_data)), self.spec()).expect("failed to create wav writer");
@@ -49,7 +55,6 @@ impl FliteWav {
         let duration = std::time::Duration::from_secs_f32(self.samples.len() as f32 / self.sample_rate as f32);
         stream_handle.play_raw(decoder.convert_samples()).expect("failed to play");
         std::thread::sleep(duration);
-
     }
 }
 
