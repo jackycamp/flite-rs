@@ -38,14 +38,22 @@ fn main() {
 ## Roadmap
 - [x] basic tts api
 - [x] control output stream with `play`
+- [ ] optimize build (include only necessary c files)
 - [ ] customize voice
 - [ ] linux support (rpi) (mess with build script)
 
 ## Installation
 
-todo
-
+At this time, only installing from source is supported.. The build needs to be cleaned up a little bit as it is too large to publish to crates.io. We just need to include only the necessary c files in the build.
 
 ## Building
+```bash
+# clone the repository
+git clone https://github.com/jackycamp/flite-rs.git
 
-todo
+# do the build
+cd flite-rs && cargo build
+
+# run an example
+cargo run --example tts
+```
