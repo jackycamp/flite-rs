@@ -5,7 +5,7 @@
 mod bindings;
 use bindings::*;
 
-use std::ffi::{CString, CStr};
+use std::ffi::CString;
 use hound::{WavWriter, WavSpec, SampleFormat};
 use rodio::{Decoder, OutputStream, source::Source, Sink};
 use std::io::{Cursor, BufWriter};
