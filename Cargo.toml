@@ -2,6 +2,34 @@
 name = "fliters"
 version = "0.1.0"
 edition = "2021"
+exclude = [
+  "extern/flite/doc/*",
+  "extern/flite/tools/*",
+  "extern/flite/sapi/*",
+  "extern/flite/testsuite/*",
+  "extern/flite/wince/*",
+  "extern/flite/windows/*",
+  "extern/flite/config*",
+  "extern/flite/main/*",
+  "extern/flite/lang/cmu_grapheme_lang",
+  "extern/flite/lang/cmu_us_slt/cmu_us_slt_*",
+  # "extern/flite/lang/cmu_us_slt/voxdefs.h",
+  "extern/flite/lang/cmu_indic_lex",
+  "extern/flite/lang/cmu_us_rms",
+  "extern/flite/lang/cmu_us_kal",
+  "extern/flite/lang/cmu_time_awb",
+  "extern/flite/lang/cmu_us_kal16",
+  "extern/flite/lang/cmulex/cmu_lex_*",
+  "extern/flite/lang/cmulex/make*",
+  "extern/flite/lang/cmulex/lib*",
+  "extern/flite/lang/cmu_us_awb",
+  "extern/flite/lang/usenglish/us_a*",
+  "extern/flite/lang/usenglish/us_d*",
+  "extern/flite/lang/usenglish/lib*",
+  "extern/flite/lang/usenglish/make*",
+  "extern/flite/lang/cmu_grapheme_lex",
+  "extern/flite/lang/cmu_indic_lang",
+]
 
 [dependencies]
 cstr = "0.2.11"
