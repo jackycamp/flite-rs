@@ -39,12 +39,13 @@ fn main() {
 - [x] basic tts api
 - [x] control output stream with `play`
 - [ ] optimize build (include only necessary c files)
-- [ ] customize voice
+- [ ] customize voice (defaults to slt right now)
 - [ ] linux support (rpi) (mess with build script)
 
 ## Installation
 
-At this time, only installing from source is supported.. The build needs to be cleaned up a little bit as it is too large to publish to crates.io. We just need to include only the necessary c files in the build.
+Add this to your cargo.toml:
+`fliters = "0.1.0"`
 
 ## Building
 ```bash
