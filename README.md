@@ -4,7 +4,9 @@
 </div>
 
 ## Usage
+
 Check out `/examples` directory for more examples.
+
 ```rust
 // standard example
 use fliters;
@@ -33,9 +35,11 @@ fn main() {
     sink.sleep_until_end();
 }
 ```
-> Only macos is supported at this time xD
+
+> Only macos has been tested at this time. xD
 
 ## Roadmap
+
 - [x] basic tts api
 - [x] control output stream with `play`
 - [ ] optimize build (include only necessary c files)
@@ -47,7 +51,12 @@ fn main() {
 Add this to your cargo.toml:
 `fliters = "0.1.0"`
 
+If you install the crate, but encounter build errors (especially linker errors), try to specify the repo as the dependency. Submit an issue in the meantime so I can investigate.
+
+`fliters = { git = "https://github.com/jackycamp/flite-rs" }`
+
 ## Building
+
 ```bash
 # clone the repository
 git clone https://github.com/jackycamp/flite-rs.git
