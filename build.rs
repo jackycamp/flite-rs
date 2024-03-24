@@ -39,26 +39,9 @@ fn get_c_files_in_dir(dir: &str) -> Vec<PathBuf> {
 
 
 fn main() {
-    let mut flite_src_path = std::path::PathBuf::from("extern");
-    flite_src_path.push("flite");
-    if !flite_src_path.exists() {
-        println!("extern/flite/ does not exist, attempting to clone");
-        let status = std::process::Command::new("git")
-            .arg("clone")
-            .arg("https://github.com/festvox/flite.git")
-            .arg(flite_src_path.to_str().unwrap())
-            .status()
-            .expect("failed to clone repository");
-
-        if !status.success() {
-            panic!("cannot clone flite repo to extern/flite. aborting build!");
-        }
-    } else {
-        println!("the path: {} already exists, skipping clone.", flite_src_path.to_str().unwrap());
-    }
 
     cc::Build::new()
-        .define("CST_NO_SOCKETS", None)
+        .define("CST_NO_SOCKETS", None) // don't include socket functionality
         .files(get_c_files_in_dir("extern/flite/src/synth"))
         .files(get_c_files_in_dir_with_exclude("extern/flite/src/utils", Some(&["cst_mmap_win32.c", "cst_file_palmos.c", "cst_file_wince.c"])))
         .files(get_c_files_in_dir("extern/flite/src/hrg"))
@@ -69,7 +52,6 @@ fn main() {
         .files(get_c_files_in_dir("extern/flite/src/stats"))
         .files(get_c_files_in_dir("extern/flite/src/wavesynth"))
         .files(get_c_files_in_dir("extern/flite/lang/cmu_us_slt"))
-        // .files(get_c_files_in_dir("extern/flite/lang/cmu_us_kal"))
         .files(get_c_files_in_dir("extern/flite/lang/usenglish"))
         .files(get_c_files_in_dir_with_exclude("extern/flite/lang/cmulex", Some(&["cmu_lex_phones_huff_table.c", "cmu_lex_num_bytes.c", "cmu_lex_data_raw.c", "cmu_lex_entries_huff_table.c"])))
         .files(get_c_files_in_dir_with_exclude("extern/flite/src/audio", Some(&["au_oss.c", "au_alsa.c", "au_wince.c", "au_pulseaudio.c", "au_win.c", "au_palmos.c", "au_sun.c"])))
