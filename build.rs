@@ -39,6 +39,21 @@ fn get_c_files_in_dir(dir: &str) -> Vec<PathBuf> {
 
 
 fn main() {
+    let mut flite_src_path = std::path::PathBuf::from("extern");
+    flite_src_path.push("flite");
+    if !flite_src_path.exists() {
+        let status = std::process::Command::new("git")
+            .arg("clone")
+            .arg("https://github.com/festvox/flite.git")
+            .arg(flite_src_path.to_str().unwrap())
+            .status()
+            .expect("failed to clone repository");
+
+        if !status.success() {
+            panic!("cannot clone flite repo to extern/flite. aborting build!");
+        }
+    }
+
     cc::Build::new()
         .define("CST_NO_SOCKETS", None)
         .files(get_c_files_in_dir("extern/flite/src/synth"))
