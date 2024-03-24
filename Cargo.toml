@@ -1,7 +1,7 @@
 [package]
 name = "fliters"
 description = "basic rust bindings for flite c library"
-version = "0.1.3"
+version = "0.1.4"
 edition = "2021"
 license = "MIT"
 exclude = [
@@ -21,7 +21,7 @@ exclude = [
   "extern/flite/lang/cmu_us_kal",
   "extern/flite/lang/cmu_time_awb",
   "extern/flite/lang/cmu_us_kal16",
-  "extern/flite/lang/cmulex/cmu_lex_*",
+  # "extern/flite/lang/cmulex/cmu_lex_*",
   "extern/flite/lang/cmulex/make*",
   "extern/flite/lang/cmulex/lib*",
   "extern/flite/lang/cmu_us_awb",
