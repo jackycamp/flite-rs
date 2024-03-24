@@ -42,6 +42,7 @@ fn main() {
     let mut flite_src_path = std::path::PathBuf::from("extern");
     flite_src_path.push("flite");
     if !flite_src_path.exists() {
+        println!("extern/flite/ does not exist, attempting to clone");
         let status = std::process::Command::new("git")
             .arg("clone")
             .arg("https://github.com/festvox/flite.git")
@@ -52,6 +53,8 @@ fn main() {
         if !status.success() {
             panic!("cannot clone flite repo to extern/flite. aborting build!");
         }
+    } else {
+        println!("the path: {} already exists, skipping clone.", flite_src_path.to_str().unwrap());
     }
 
     cc::Build::new()
