@@ -36,7 +36,7 @@ fn main() {
 }
 ```
 
-> Only macos has been tested at this time. xD
+> I've only tested on MacOS Sonoma 14.2. xD
 
 ## Roadmap
 
@@ -44,12 +44,13 @@ fn main() {
 - [x] control output stream with `play`
 - [ ] optimize build (include only necessary c files)
 - [ ] customize voice (defaults to slt right now)
-- [ ] linux support (rpi) (mess with build script)
+- [ ] linux arm64 support
+- [ ] linux amd64 support
 
 ## Installation
 
 Add this to your cargo.toml:
-`fliters = "0.1.2"`
+`fliters = "0.1.5"`
 
 If you install the crate, but encounter build errors (especially linker errors), try to specify the repo as the dependency. Submit an issue in the meantime so I can investigate.
 
