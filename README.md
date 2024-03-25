@@ -50,7 +50,7 @@ fn main() {
 ## Installation
 
 Add this to your cargo.toml:
-`fliters = "0.1.5"`
+`fliters = "0.1.7"`
 
 If you install the crate, but encounter build errors (especially linker errors), try to specify the repo as the dependency. Submit an issue in the meantime so I can investigate.
 
