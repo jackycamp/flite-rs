@@ -36,7 +36,10 @@ fn main() {
 }
 ```
 
-> I've only tested on MacOS Sonoma 14.2. xD
+## Tested on
+
+- MacOS Sonoma 14.2
+- Debian (bookworm)
 
 ## Roadmap
 
@@ -45,14 +48,25 @@ fn main() {
 - [ ] optimize build (include only necessary c files)
 - [ ] customize voice (defaults to slt right now)
 - [ ] linux arm64 support
-- [ ] linux amd64 support
+- [ ] debian linux amd64 support
 
 ## Installation
+
+**Linux Dependencies**
+
+On linux, `rodio` relies on `cpal` and `cpal` needs alsa development files to build.
+You can see [rodio's repo](https://github.com/RustAudio/rodio?tab=readme-ov-file#dependencies-linux-only) for more info.
+
+```bash
+sudo apt install libasound2-dev
+```
+
+**crate**
 
 Add this to your cargo.toml:
 `fliters = "0.1.7"`
 
-If you install the crate, but encounter build errors (especially linker errors), try to specify the repo as the dependency. Submit an issue in the meantime so I can investigate.
+If you install the crate, but encounter build errors, try to specify the repo as the dependency. Submit an issue in the meantime so I can investigate.
 
 `fliters = { git = "https://github.com/jackycamp/flite-rs" }`
 
