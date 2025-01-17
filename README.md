@@ -76,6 +76,9 @@ If you install the crate, but encounter build errors, try to specify the repo as
 # clone the repository
 git clone https://github.com/jackycamp/flite-rs.git
 
+# If you want the git submodules on first clone
+git clone --recursive https://github.com/jackycamp/flite-rs.git
+
 # do the build
 cd flite-rs && cargo build
 
