@@ -39,6 +39,9 @@ fn main() {
 Check out the `make_waveform` example to see how we go from
 text -> 16-bit samples -> (time, amplitude pairs) -> wave form visualization in your terminal!
 
+![image](https://github.com/user-attachments/assets/f83cefe6-82ce-4c35-856f-4253efe4d918)
+
+
 ## Tested on
 
 - MacOS Sonoma 14.2
