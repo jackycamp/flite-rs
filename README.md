@@ -53,8 +53,8 @@ text -> 16-bit samples -> (time, amplitude) pairs -> wave form visualization in 
 - [x] control output stream with `play`
 - [ ] optimize build (include only necessary c files)
 - [ ] customize voice (defaults to slt right now)
-- [ ] linux arm64 support
-- [ ] debian linux amd64 support
+- [x] debian linux amd64 support
+- [ ] jetson orin support
 
 ## Installation
 
@@ -72,7 +72,7 @@ sudo apt install libasound2-dev
 Add this to your cargo.toml:
 `fliters = "0.1.7"`
 
-If you install the crate, but encounter build errors, try to specify the repo as the dependency. Submit an issue in the meantime so I can investigate.
+If you install the crate, but encounter build errors, try to specify the repo as the dependency. Submit an issue in the meantime while I investigate.
 
 `fliters = { git = "https://github.com/jackycamp/flite-rs" }`
 
