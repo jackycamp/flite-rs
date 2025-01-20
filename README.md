@@ -45,7 +45,6 @@ cargo run --example make_waveform
 
 ![image](https://github.com/user-attachments/assets/f83cefe6-82ce-4c35-856f-4253efe4d918)
 
-
 ## Tested on
 
 - MacOS Sonoma 14.2
@@ -74,7 +73,7 @@ sudo apt install libasound2-dev
 **crate**
 
 Add this to your cargo.toml:
-`fliters = "0.1.7"`
+`fliters = "0.1.8"`
 
 If you install the crate, but encounter build errors, try to specify the repo as the dependency. Submit an issue in the meantime while I investigate.
 
