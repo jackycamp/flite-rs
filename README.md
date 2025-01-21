@@ -94,3 +94,22 @@ cd flite-rs && cargo build
 # run an example
 cargo run --example tts
 ```
+
+## Troubleshooting
+
+On linux, sometimes pulseaudio crashes and you might see ALSA messages in your terminal
+when you try to call the `play()` fn, e.g.:
+
+```bash
+...
+ALSA lib pcm.c:8570:(snd_pcm_recover) underrun occurred
+ALSA lib pcm.c:8570:(snd_pcm_recover) underrun occurred
+ALSA lib pcm.c:8570:(snd_pcm_recover) underrun occurred
+...
+```
+
+Restarting pulseaudio's (daemon) can sometimes fix this:
+
+```bash
+pulseaudio -k # kills the deamon, and should automatically restart
+```
