@@ -65,7 +65,7 @@ impl FliteWav {
                 .write_sample(sample)
                 .expect("failed to write sample")
         });
-        wav_writer.finalize().expect("Failed to finalized wav");
+        wav_writer.finalize().expect("failed to finalize wav");
         let decoder = Decoder::new(Cursor::new(wav_data)).unwrap();
         let duration =
             std::time::Duration::from_secs_f32(self.samples.len() as f32 / self.sample_rate as f32);
