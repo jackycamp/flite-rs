@@ -64,4 +64,6 @@ fn main() {
     for row in screen {
         println!("{}", row.iter().collect::<String>());
     }
+
+    fwav.play();
 }
