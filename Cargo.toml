@@ -4,6 +4,7 @@ description = "basic rust bindings for flite c library"
 version = "0.1.8"
 edition = "2021"
 license = "MIT"
+repository = "https://github.com/jackycamp/flite-rs/"
 exclude = [
   "extern/flite/doc/*",
   "extern/flite/tools/*",
