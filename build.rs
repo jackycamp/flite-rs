@@ -7,7 +7,7 @@ fn get_c_files_in_dir_with_exclude(dir: &str, exclude: Option<&[&str]> ) -> Vec<
     let mut cfiles = Vec::new();
     let dir = PathBuf::from(dir);
 
-    fs::read_dir(dir.clone()).expect(&format!("can't read dir {:?}", dir));
+    fs::read_dir(dir.clone()).unwrap_or_else(|_| panic!("can't read dir {:?}", dir));
 
     let exclude_paths: Vec<PathBuf> = exclude
         .unwrap_or(&[])
