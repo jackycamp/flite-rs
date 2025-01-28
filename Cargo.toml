@@ -37,7 +37,7 @@ exclude = [
 [dependencies]
 cstr = "0.2.11"
 hound = "3.5"
-rodio = { version = "0.17.1", default_features = false, features = ["wav"] }
+rodio = { version = "0.17.1", default-features = false, features = ["wav"] }
 
 [build-dependencies]
 cc = "1.0.83"
